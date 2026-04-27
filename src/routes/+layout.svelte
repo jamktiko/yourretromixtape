@@ -6,4 +6,15 @@
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
-{@render children()}
+
+<div class="app">{@render children()}</div>
+
+<style>
+	.app {
+		min-height: 100vh;
+		background-image: url('/static/retro-casette-bg.png');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+</style>

@@ -1,3 +1,9 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+@theme {
+	--color-cta-color: #ff6635;
+	--color-text-box: #f4e87c;
+	--color-text-color: #33261d;
+}

@@ -19,7 +19,7 @@
 			const osoite = `/new?id=${valittuVideo.id}`;
 
 			// eslint-disable-next-line svelte/no-navigation-without-resolve
-			await goto(osoite); //odottaa että tehdään new kansio, jossa page.svelte
+			await goto(osoite);
 		} catch (virhe) {
 			console.error('Musiikkivideon haku epäonnistui:', virhe);
 		}

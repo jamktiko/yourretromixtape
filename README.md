@@ -50,9 +50,19 @@ npm run dev
 
 ## Help
 
-- npm install fails: Ensure that you have Node.js (v18+) installed. You can check your version by running node -v in the terminal.
+- npm install fails: Ensure that you have Node.js (v18+) installed. You can check your version by running
 
-- Port already in use: If localhost:5173 is busy, you can run the app on a different port using npm run dev -- --port 3000.
+```
+node -v
+```
+
+in the terminal.
+
+- Port already in use: If localhost:5173 is busy, you can run the app on a different port using
+
+```
+npm run dev -- --port 3000.
+```
 
 ## Authors
 

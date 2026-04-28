@@ -1,5 +1,5 @@
 <script lang="ts">
-	import MixedGenres from '$lib/components/mixedGenres.svelte';
+	import Genre from './Genre.svelte';
 </script>
 
-<div><MixedGenres /></div>
+<div><Genre /></div>

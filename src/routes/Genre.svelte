@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { fly } from 'svelte/transition';
 	interface KappaleGenre {
 		Genre: string;
 	}
 
-	let valitutGenret = $state<string[]>([]); // Tähän muuttujaan tallennetaan käyttäjän valitsema genre. Alustettu tyhjällä merkkijonolla, joka tarkoittaa, että aluksi mikään genre ei ole valittuna.
+	let valittuGenre = $state<string[]>([]); // Tähän muuttujaan tallennetaan käyttäjän valitsema genre. Alustettu tyhjällä merkkijonolla, joka tarkoittaa, että aluksi mikään genre ei ole valittuna.
 
 	let avaaValikko = $state(false); // Tämä boolean-muuttuja määrittää, onko genre-valikko auki vai kiinni. Alustettu false-arvolla, joka tarkoittaa, että valikko on aluksi kiinni.
 	let genret = $state<KappaleGenre[]>([]); // Muuttuja alustettu tyhjällä taulukolla, joka sisältää KappaleGenre-tyyppisiä objekteja. Tämä taulukko täytetään myöhemmin datan haun yhteydessä.
@@ -12,7 +13,7 @@
 	//Funktio, joka tallentaa valinnan taulukkoon
 	const valitse = (genre: string) => {
 		// Lisätään uusi genre taulukkoon (spread-operaattori on varma tapa)
-		valitutGenret = [...valitutGenret, genre];
+		valittuGenre = [...valittuGenre, genre];
 
 		// Suljetaan valikko valinnan jälkeen
 		avaaValikko = false;
@@ -37,17 +38,45 @@
 </script>
 
 <!-- Valintanappi -->
-<button onclick={() => (avaaValikko = !avaaValikko)}> Choose a Genre </button>
+<button
+	class="flex w-42 cursor-pointer items-center justify-between rounded-lg border-[3px] border-text-color bg-cta-color px-3 py-1 font-teksti text-base leading-4 font-bold text-text-color shadow-md
+		transition-all duration-300 ease-in-out
+		hover:scale-105
+		hover:bg-cta-color hover:shadow-lg"
+	onclick={() => (avaaValikko = !avaaValikko)}
+>
+	<span class="">{valittuGenre || 'Choose genre'}</span>
+	<svg
+		class="h-4 w-4 transition-transform duration-300"
+		class:rotate-180={avaaValikko}
+		fill="none"
+		stroke="currentColor"
+		viewBox="0 0 24 24"
+	>
+		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+	</svg>
+</button>
 <!-- jos datan haussa tapahtuu virhe -->
 {#if virhe}
-	<label for="genre">{virhe}</label>
+	<label for="genre" class="mb-2 block font-medium text-red-500">{virhe}</label>
 {/if}
 <!-- jos valikko on auki ja ei virhettä -->
 {#if avaaValikko && !virhe}
-	<div>
+	<div
+		transition:fly={{ y: -8, duration: 180 }}
+		class="w-42 max-w-sm
+	origin-top"
+	>
 		{#each genret as g (g.Genre)}
 			<!-- Käytetään valitse-funktiota, joka tallentaa listaan -->
-			<button onclick={() => valitse(g.Genre)}>
+			<button
+				class="flex w-full cursor-pointer items-center justify-center rounded-lg
+				border-[3px] border-text-color bg-cta-color p-2 px-3 py-1 font-teksti text-base leading-4 font-bold text-text-color
+				transition-all duration-300 ease-in-out
+		hover:scale-105
+		hover:bg-cta-color hover:shadow-lg"
+				onclick={() => valitse(g.Genre)}
+			>
 				{g.Genre}
 			</button>
 		{/each}

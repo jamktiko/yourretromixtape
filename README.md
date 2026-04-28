@@ -4,7 +4,7 @@ The app draws a random, curated music video based on the genre selected by the u
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+In Your Retro Mixtape, users can choose from one of the available music genres to receive a randomly selected music video with accompanying fun facts or background information. Alternatively the user can also choose to forego the genre selection, instead receiving a random music video from all the available genres. After receiving a music video, the user can return back to the genre selcetion or keep receiving videos from the same category.
 
 ## Getting Started
 
@@ -20,17 +20,33 @@ This project is build using the following tecnologies:
 
 ### Installing
 
-- How/where to download your program
-- Any modifications needed to be made to files/folders
+1. Clone the repository:
+
+```
+git clone https://github.com/jamktiko/yourretromixtape.git
+```
+
+2. Go to the project directory:
+
+```
+cd yourretromixtape
+```
+
+3. Install dependencies:
+
+```
+npm install
+```
 
 ### Executing program
 
-- How to run the program
-- Step-by-step bullets
+1. Start the dev server:
 
 ```
-code blocks for commands
+npm run dev
 ```
+
+2. Navigate to the website indicated after running the previous command.
 
 ## Help
 
@@ -46,8 +62,6 @@ Siri Laine, Wilho Wilpola, Niko Mustajärvi and Nea Tiihonen
 
 ## Version History
 
-- 0.2
-  - Various bug fixes and optimizations
 - 0.1
   - Initial Release
 

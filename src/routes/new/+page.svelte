@@ -1,31 +1,48 @@
 <script lang="ts">
-	//TÄMÄ kaikki jotta mixedGenres.svelte toimii
-
-	// 'page'-objekti, jotta voi lukea osoiteriviltä tiedon (?id=...)
-	import { page } from '$app/state';
-	import { goto } from '$app/navigation';
-
-	// Luetaan 'id' osoiterivin hakuparametreista.
-	// $derived pitää huolen, että id päivittyy, vaikka nappia painetaan uudestaan sivun ollessa auki.
-	const videoId = $derived(page.url.searchParams.get('id'));
-
-	// Takaisin-toiminto, joka hiljentää linterin virheet.
-	async function meneTakaisin(event: MouseEvent) {
-		event.preventDefault(); // Estetään selaimen vakiohyppy
-
-		// eslint-disable-next-line svelte/no-navigation-without-resolve
-		await goto('/');
+	import { onMount } from 'svelte';
+	//interface rakenne yhdelle biisille
+	interface Biisi {
+		id: string;
+		title: string;
+		url: string;
+		genre: string;
+		fact: string[]; //taulukko faktoille
 	}
+
+	//tilamäärittely:
+	//taulukko biisit alkuun tyhjä ja se saa sisältöä haun jälkeen
+	let biisit = $state<Biisi[]>([]);
+	//onmount suoritetaan kerran kun komponentti ladataan selaimessa
+	onMount(async () => {
+		try {
+			//haetaan biisit tiedostosta
+			const biisitResponse = await fetch('/data/biisit.json');
+			//muutetaan vastaus objektiksi ja tallennetaan
+			biisit = (await biisitResponse.json()) as Biisi[];
+		} catch (error) {
+			console.error('Error fetching data:', error);
+		}
+	});
 </script>
 
 <main>
-	{#if videoId}
-		<h1>Nyt toistetaan videota: {videoId}</h1>
-		<p>Tässä kohtaa koodi tietää, minkä videon se lataa soittimeen.</p>
-	{:else}
-		<h1>Hups!</h1>
-		<p>Videon ID puuttuu osoiteriviltä. Palaa etusivulle ja arvo uusi.</p>
-	{/if}
-
-	<button onclick={meneTakaisin}>Takaisin etusivulle</button>
+	{#each biisit as biisi (biisi.id)}
+		<!-- tyylittelyä  -->
+		<iframe
+			src={biisi.url}
+			title={biisi.title}
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+		></iframe>
+		<!-- tyylitys -->
+		<!-- tyylittely"facts"> -->
+		Did you know?
+		<ul>
+			{#each biisi.fact as f (f)}
+				<li>{f}</li>
+			{/each}
+		</ul>
+		<!-- tyylit -->
+		<!-- tyylit -->
+	{/each}
 </main>

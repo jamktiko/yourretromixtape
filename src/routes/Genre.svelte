@@ -4,20 +4,18 @@
 		Genre: string;
 	}
 
-	let valittuGenre = $state<string[]>([]); // Tähän muuttujaan tallennetaan käyttäjän valitsema genre. Alustettu tyhjällä merkkijonolla, joka tarkoittaa, että aluksi mikään genre ei ole valittuna.
+	let valittuGenre = $state<string>(''); // Tähän muuttujaan tallennetaan käyttäjän valitsema genre. Alustettu tyhjällä merkkijonolla, joka tarkoittaa, että aluksi mikään genre ei ole valittuna.
 
 	let avaaValikko = $state(false); // Tämä boolean-muuttuja määrittää, onko genre-valikko auki vai kiinni. Alustettu false-arvolla, joka tarkoittaa, että valikko on aluksi kiinni.
 	let genret = $state<KappaleGenre[]>([]); // Muuttuja alustettu tyhjällä taulukolla, joka sisältää KappaleGenre-tyyppisiä objekteja. Tämä taulukko täytetään myöhemmin datan haun yhteydessä.
 	let virhe = $state<string | null>(null); // Tähän muuttujaan tallennetaan mahdollinen virheviesti, joka syntyy datan haun aikana. Alustettu null-arvolla, joka tarkoittaa, että aluksi ei ole virhettä.
 
-	//Funktio, joka tallentaa valinnan taulukkoon
-	const valitse = (genre: string) => {
-		// Lisätään uusi genre taulukkoon (spread-operaattori on varma tapa)
-		valittuGenre = [...valittuGenre, genre];
-
-		// Suljetaan valikko valinnan jälkeen
-		avaaValikko = false;
+	// Funktio, joka päivittää vain yhden valinnan
+	const valitseGenre = (genre: string) => {
+		valittuGenre = genre; // Korvaa vanhan valinnan uudella
+		avaaValikko = false; // Sulkee valikon
 	};
+
 	// $effect-syntaksi on SvelteKitin tapa määritellä sivuvaikutuksia, kuten datan hakua. Tämä efekti suoritetaan, kun komponentti renderöidään, ja se hakee genretiedot JSON-tiedostosta. Jos haku onnistuu, genret-taulukko täytetään haetulla datalla. Jos haku epäonnistuu, virhe-muuttujaan tallennetaan virheviesti, joka voidaan näyttää käyttäjälle.
 	$effect(() => {
 		const haeData = async () => {
@@ -39,13 +37,13 @@
 
 <!-- Valintanappi -->
 <button
-	class="flex w-42 cursor-pointer items-center justify-between rounded-lg border-[3px] border-text-color bg-cta-color px-3 py-1 font-teksti text-base leading-4 font-bold text-text-color shadow-md
+	class="flex w-42 cursor-pointer items-center justify-center rounded-lg border-[3px] border-text-color bg-cta-color px-3 py-1 font-teksti text-base leading-4 font-bold text-text-color shadow-md
 		transition-all duration-300 ease-in-out
-		hover:scale-105
-		hover:bg-cta-color hover:shadow-lg"
+	hover:scale-105
+	hover:bg-cta-color hover:shadow-lg"
 	onclick={() => (avaaValikko = !avaaValikko)}
 >
-	<span class="">{valittuGenre || 'Choose genre'}</span>
+	<span class="text-center">{valittuGenre || 'Choose genre'}</span>
 	<svg
 		class="h-4 w-4 transition-transform duration-300"
 		class:rotate-180={avaaValikko}
@@ -75,9 +73,14 @@
 				transition-all duration-300 ease-in-out
 		hover:scale-105
 		hover:bg-cta-color hover:shadow-lg"
-				onclick={() => valitse(g.Genre)}
+				onclick={() => valitseGenre(g.Genre)}
 			>
 				{g.Genre}
+				{#if valittuGenre === g.Genre}
+					<div class="relative">
+						<span class="relative left-3 -translate-x-1/2 -translate-y-1/2 text-text-color">✓</span>
+					</div>
+				{/if}
 			</button>
 		{/each}
 	</div>

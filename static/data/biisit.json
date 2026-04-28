@@ -1,0 +1,114 @@
+[
+  {
+    "id": "1",
+    "title": "Michael Jackson - They don’t care about us",
+    "url": "https://www.youtube.com/embed/QNJL6nfu__Q?si=17opbULQ8qIKaE-8",
+    "genre": "Pop",
+    "fact": [
+      "The music video features the famous Olodum drummers.",
+      "Jackson's production team had negotiated with drug dealers to gain permission to film in one of the city's shantytowns.",
+      "It wasn’t scripted that one-woman hugged Jackson who continued dancing while hugging her."
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Michael Jackson - Thriller",
+    "url": "https://www.youtube.com/embed/sOnqjkJTMaA",
+    "genre": "Pop",
+    "fact": [
+      "This song was first called Starlight, but it was changed to Thriller because the producer thought that Starlight would need a different hook.",
+      "The funding for the music video came from a ’Behind-the-scenes’ documentary.",
+      "Thriller is the only music video to be inducted into The National Film Registry."
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Madonna - Material Girl",
+    "url": "https://www.youtube.com/embed/6p-lDYPR2P8?si=28J5WY0-MWKNYgyW",
+    "genre": "Pop",
+    "fact": [
+      "Madonna’s Material Girl music video is a tribute to Marilyn Monroes performance 'Diamonds Are a Girl’s Best Friend'.",
+      "Madonna has admitted that she regretted naming the song Material Girl because people started calling her that, which she didn't like."
+    ]
+  },
+  {
+    "id": "4",
+    "title": "ABBA - Fernando",
+    "url": "https://www.youtube.com/embed/dQsjAbZDx-4?si=4rmAV4W7ooVBrE8e",
+    "genre": "Pop",
+    "fact": [
+      "This song's working title was Tango and it was originally recorded for Anni-Frid Lyngstad’s solo album.",
+      "Male members of ABBA wrote this song."
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Billy Joel - Uptown Girl",
+    "url": "https://www.youtube.com/embed/hCuMWrfXG4E?si=QpNY5zzmyZ8zSlJY",
+    "genre": "Pop",
+    "fact": [
+      "The song is based on real-life romance because Billy Joel and Christie Brinkley were dating at the time.",
+      "To make the choreography work, the backup dancers had to be professionals who could carry the energy of the scene."
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Queen – I want to break free",
+    "url": "https://www.youtube.com/embed/f4Mc-NYPHaQ?si=z_OuTQ5iGcLQpxTF",
+    "genre": "Rock",
+    "fact": [
+      "The music video features all four members crossdressing.",
+      "The crossdressing is a nod to the British soap opera Coronation Street, with Mercury's and May's costumes being based on characters in the show."
+    ]
+  },
+  {
+    "id": "7",
+    "title": "Dire Straits – Money for nothing",
+    "url": "https://www.youtube.com/embed/lAD6Obi7Cag?si=NncQHDY8InNSI_uc",
+    "genre": "Rock",
+    "fact": [
+      "One of the first uses of computer-animated human characters in a music video.",
+      "Mark Knopfler was initially reluctant to make a video and had to be convinced by the director and his girlfriend."
+    ]
+  },
+  {
+    "id": "8",
+    "title": "Duran Duran – Hungry like the wolf",
+    "url": "https://www.youtube.com/embed/oJL-lCzEXgI?si=zB5Xue59F4elzGET",
+    "genre": "Rock",
+    "fact": [
+      "Guitarist Andy Taylor was hospitalised after accidentally drinking water from the lagoon during the shoot.",
+      "Filmed in Sri Lanka under extreme heat and humidity.",
+      "Directed by Russell Mulcahy, who later became a famous feature film director."
+    ]
+  },
+  {
+    "id": "9",
+    "title": "T2Pac ft. Dr. Dre - California Love",
+    "url": "https://www.youtube.com/embed/omfz62qu_Bc?si=WaQNZk8YNCE91xp8",
+    "genre": "Rap",
+    "fact": ["Inspired by Mad Max Beyond Thunderdome, the iconic California Love music video was filmed in November 1995 but set in the year 2095. Originally pitched and nearly directed by Jada Pinkett Smith, the project was ultimately helmed by Hype Williams in the desert of El Mirage, California."]
+},
+  {
+    "id": "10",
+    "title": "Beastie Boys - Sabotage",
+    "url": "https://www.youtube.com/embed/z5rRZdiu1UE?si=Tdaj9CiXBO3EdQpb",
+    "genre": "Rap",
+    "fact": ["The famous opening lines of Sabotage were actually Ad-Rock venting frustration at producer Mario Caldato Jr. The outburst was a response to Caldato pushing the Beastie Boys to stop being indecisive and finally finish a track for their fourth album"]
+  },
+  {
+    "id": "11",
+    "title": "Slick Rick - Children's Story",
+    "url": "https://www.youtube.com/embed/HjNTu8jdukA?si=GFCUhdlnmrMMXmM5",
+    "genre": "Rap",
+    "fact": ["Released in 1989, Slick Rick's Children's Story is a landmark of narrative rap that warns against the dangers of crime. Built on an interpolation of Bob James' Nautilus, the track became the most successful single from his debut album and remains one of the most sampled songs in hip-hop history."]
+  },
+  {
+    "id": "12",
+    "title": "N.W.A. - Straight Outta Compton",
+    "url": "https://www.youtube.com/embed/TMZi25Pq3T8?si=Z6fGF_zz9-nR1Q95",
+    "genre": "Rap",
+    "fact": ["Released in January 1989, Straight Outta Compton became the first gangsta rap album to go platinum despite minimal radio play. Its notoriety was fueled by a warning letter from the FBI regarding the song Fuck tha Police, a move that backfired by cementing N.W.A's reputation as the world’s most dangerous group."]
+  }
+]
+

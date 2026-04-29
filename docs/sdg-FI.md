@@ -48,7 +48,7 @@
 ### 1. Miksi kestävä kehitys on tärkeää minulle tai tiimillemme?
 
 Oppimalla kestävästä kehityksestä voimme tulevaisuudessa jokainen tuottaa ympäristölle kestäviä ohjelmia ja sovelluksia.
-Haluamme ottaa huomioon Maapallon tulevaisuuden, ympäristöystävällisen sekä hiilijalanjälkeä pienntävän työskentelyn ja suunnittelun.
+Haluamme ottaa huomioon Maapallon tulevaisuuden, ympäristöystävällisen sekä hiilijalanjälkeä pienentävän työskentelyn ja suunnittelun.
 
 ## Aihe
 
@@ -60,7 +60,7 @@ Haluamme ottaa huomioon Maapallon tulevaisuuden, ympäristöystävällisen sekä
 <!-- Vieraslajien torjunta (SDG15: Maanpäällinen elämä) -->
 <!-- Kulttuuriperinnön suojeleminen (SDG11: Kestävät kaupungit ja yhteisöt) -->
 
-Sovelluksessamme voit katsoa vain tietyn määrän videoita, joten videoiden katselu vähentyy. Tällä tavoin videoiden katseluun ja tuottamiseen käytetty eneregia vähenee.
+Sovelluksessamme voit katsoa vain tietyn määrän videoita, joten videoiden katselu vähentyy. Tällä tavoin videoiden katseluun ja niiden tuottamiseen käytetty eneregiamäärä vähenee.
 
 ## Toteutus
 
@@ -85,7 +85,7 @@ Energiankulutus on minimoitu sillä, että on vain pieni määrä videoita.
 <!-- Kannustaako sovellus muuhun kulutukseen? (esim. sovellus on verkkokauppa) -->
 <!-- Millä tavoin sovellus saattaa muuttaa käyttäjän toimintaa? (esim. lisätä tai vähentää yksityisautoilua) -->
 
-Sovellus voi kannustaa käyttäjiä katsomaan sovelluksen ulkopuoleltakin musiikki videoita, joiden lissäntyvä katsominen lisää luonnovaroista veden kulutusta.
+Sovellus voi kannustaa käyttäjiä katsomaan sovelluksen ulkopuoleltakin musiikki videoita, joiden lisääntyvä katsominen lisää luonnovaroista veden kulutusta.
 
 ### 5. Kuinka sovelluksen pitkäikäisyys on varmistettu?
 
@@ -96,7 +96,7 @@ Sovellus voi kannustaa käyttäjiä katsomaan sovelluksen ulkopuoleltakin musiik
 <!-- Onko sovellus mukautettavissa muuttuviin tarpeisiin ja vaatimuksiin? -->
 <!-- Onko sovelluksen lähdekoodi ja kehitysprosessi dokumentoitu? -->
 
-Soveluus on riippuvainen YouTubesta, koska musiikki videot otetaan sieltä. Sovellus on mukautettavissa, koska itse tehtyyn Json-tiedostoon voi lisätä esimerkiksi uusia videoita ja genrejä. Sovelluksen kehitysprosessi on dokumentoitu prosessisuunnitelmassa, joka tulee löytymään Gitistä.
+Sovellus on riippuvainen YouTubesta, koska musiikkivideot otetaan sieltä. Sovellus on mukautettavissa, koska itse tehtyyn Json-tiedostoon voi lisätä esimerkiksi uusia videoita ja genrejä. Sovelluksen kehitysprosessi on dokumentoitu prosessisuunnitelmassa, joka tulee löytymään Gitistä.
 
 ### 6. Kuinka sovelluksessa on huomioitu saavutettavuus ja yhdenvertaisuus?
 
@@ -108,7 +108,7 @@ Soveluus on riippuvainen YouTubesta, koska musiikki videot otetaan sieltä. Sove
 <!-- Millaista osaamista ja varallisuutta sovelluksen käyttö vaatii? -->
 <!-- Millä kielillä sovellus on saatavilla? -->
 
-Sovelluksen saavutettavuutta on perustasolla mietitty, että esimerkiksi kaikille tapahtumille on esimerkiksi nappi. Sovelluksemme on melko yhdenvertainen, koska sovellus ei kysy käyttäjän sukupuolta, ikää jne. Sovellus on tehty englannin kielellä, mutta se olisi myös mahdollista tehdä erikielillä. LUlkoasun suunnitelussa on käytetty neutraaleja värejä, jotta sovellus olisi mahdollisimman saavutettava.
+Sovelluksen saavutettavuutta on perustasolla mietitty, että esimerkiksi kaikille tapahtumille on nappi. Sovelluksemme on melko yhdenvertainen, koska sovellus ei kysy käyttäjän sukupuolta, ikää jne. Sovellus on tehty englannin kielellä, mutta se olisi myös mahdollista tehdä erikielillä. Ulkoasun suunnittelussa on käytetty neutraaleja värejä, jotta sovellus olisi mahdollisimman saavutettava.
 
 ### 7. Millaisia vaikutuksia sovelluksella voi olla käyttäjälle tai hänen lähipiirilleen?
 
@@ -119,7 +119,7 @@ Sovelluksen saavutettavuutta on perustasolla mietitty, että esimerkiksi kaikill
 <!-- Millaisia vaikutuksia sovelluksella voi olla sosiaalisiin suhteisiin, terveyteen tai mielialaan? -->
 <!-- Millaisia vaikutuksia sovelluksella voi olla elämänhallintaan tai taloudelliseen tilanteeseen? -->
 
-Koska sovelluksessa katsotaan videoita kuunnellaan musiikkia voi siitä aiheutua meluhaittaa.
+Koska sovelluksessa katsotaan videoita ja kuunnellaan musiikkia voi siitä aiheutua meluhaittaa.
 
 ### 8. Millaisia vaikutuksia sovelluksella voi olla yhteiskunnallisella tasolla?
 

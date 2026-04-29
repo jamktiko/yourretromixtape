@@ -3,6 +3,7 @@
 	import MixedGenres from '$lib/components/mixedGenres.svelte';
 	import Button from '$lib/components/Button.svelte';
 	import { goto } from '$app/navigation';
+	import InfoButton from '$lib/components/InfoButton.svelte';
 
 	async function arvoVideo() {
 		try {
@@ -35,6 +36,8 @@
 	}
 
 	let valittuGenre = $state('');
+	//infoikkuna, joka kertoo onko modal auki vai ei
+	let modalAuki = $state(false);
 
 	let onkoValittu = $derived(valittuGenre !== '');
 </script>
@@ -42,3 +45,7 @@
 <div><Genre bind:valittuGenre /></div>
 <MixedGenres />
 <Button onclick={arvoVideo} text="Start" disabled={!onkoValittu} />
+<button onclick={() => (modalAuki = true)}>Info</button>
+{#if modalAuki}
+	<InfoButton onClose={() => (modalAuki = false)} />
+{/if}

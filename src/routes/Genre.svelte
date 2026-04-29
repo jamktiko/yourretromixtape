@@ -2,19 +2,23 @@
 	import { fly } from 'svelte/transition';
 	interface KappaleGenre {
 		Genre: string;
+		kuva: string;
 	}
 
-	let valittuGenre = $state<string>(''); // Tähän muuttujaan tallennetaan käyttäjän valitsema genre. Alustettu tyhjällä merkkijonolla, joka tarkoittaa, että aluksi mikään genre ei ole valittuna.
+	let { valittuGenre = $bindable() } = $props(); // Tähän muuttujaan tallennetaan käyttäjän valitsema genre. Alustettu tyhjällä merkkijonolla, joka tarkoittaa, että aluksi mikään genre ei ole valittuna.
 
 	let avaaValikko = $state(false); // Tämä boolean-muuttuja määrittää, onko genre-valikko auki vai kiinni. Alustettu false-arvolla, joka tarkoittaa, että valikko on aluksi kiinni.
 	let genret = $state<KappaleGenre[]>([]); // Muuttuja alustettu tyhjällä taulukolla, joka sisältää KappaleGenre-tyyppisiä objekteja. Tämä taulukko täytetään myöhemmin datan haun yhteydessä.
 	let virhe = $state<string | null>(null); // Tähän muuttujaan tallennetaan mahdollinen virheviesti, joka syntyy datan haun aikana. Alustettu null-arvolla, joka tarkoittaa, että aluksi ei ole virhettä.
-
 	// Funktio, joka päivittää vain yhden valinnan
-	const valitseGenre = (genre: string) => {
-		valittuGenre = genre; // Korvaa vanhan valinnan uudella
+
+	// Otetaan vastaan propsi, jota vanhempi voi lukea
+
+	// Kun käyttäjä valitsee genren dropdownista:
+	function valitse(nimi: string) {
+		valittuGenre = nimi; // Korvaa vanhan valinnan uudella
 		avaaValikko = false; // Sulkee valikon
-	};
+	}
 
 	// $effect-syntaksi on SvelteKitin tapa määritellä sivuvaikutuksia, kuten datan hakua. Tämä efekti suoritetaan, kun komponentti renderöidään, ja se hakee genretiedot JSON-tiedostosta. Jos haku onnistuu, genret-taulukko täytetään haetulla datalla. Jos haku epäonnistuu, virhe-muuttujaan tallennetaan virheviesti, joka voidaan näyttää käyttäjälle.
 	$effect(() => {
@@ -73,7 +77,7 @@
 				transition-all duration-300 ease-in-out
 		hover:scale-105
 		hover:bg-cta-color hover:shadow-lg"
-				onclick={() => valitseGenre(g.Genre)}
+				onclick={() => valitse(g.Genre)}
 			>
 				{g.Genre}
 				{#if valittuGenre === g.Genre}

@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
+
 	//interface rakenne yhdelle biisille
 	interface Biisi {
 		id: string;
@@ -12,6 +14,13 @@
 	//tilamäärittely:
 	//taulukko biisit alkuun tyhjä ja se saa sisältöä haun jälkeen
 	let biisit = $state<Biisi[]>([]);
+
+	// haetaan id osoiteriviltä
+	let valittuID = $derived($page.url.searchParams.get('id'));
+
+	// etsitään listasta se biisi, jonka id vastaa valittua id:tä
+	let naytettavaBiisi = $derived(biisit.find((b) => b.id === valittuID));
+
 	//onmount suoritetaan kerran kun komponentti ladataan selaimessa
 	onMount(async () => {
 		try {
@@ -26,23 +35,27 @@
 </script>
 
 <main>
-	{#each biisit as biisi (biisi.id)}
+	{#if naytettavaBiisi}
+		<h1>{naytettavaBiisi.title}</h1>
+
 		<!-- tyylittelyä  -->
-		<iframe
-			src={biisi.url}
-			title={biisi.title}
-			frameborder="0"
-			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-		></iframe>
+		<div>
+			<iframe
+				src={naytettavaBiisi.url}
+				title={naytettavaBiisi.title}
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			></iframe>
+		</div>
 		<!-- tyylitys -->
 		<!-- tyylittely"facts"> -->
 		Did you know?
 		<ul>
-			{#each biisi.fact as f (f)}
+			{#each naytettavaBiisi.fact as f (f)}
 				<li>{f}</li>
 			{/each}
 		</ul>
-		<!-- tyylit -->
-		<!-- tyylit -->
-	{/each}
+	{/if}
+	<!-- tyylit -->
+	<!-- tyylit -->
 </main>

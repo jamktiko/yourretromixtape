@@ -6,7 +6,7 @@
 	// vie aikaa
 	async function arvoVideo() {
 		try {
-			const vastaus = await fetch('/biisit.json'); //hakee biisin
+			const vastaus = await fetch('/data/biisit.json'); //hakee biisin
 			//await odottaa, että fetch on valmis ja tallentaa vastauksen muuttujaan vastaus
 			const data = await vastaus.json();
 
@@ -16,7 +16,7 @@
 			const valittuVideo = data[randomID];
 
 			// (?id=), koska silloin ei tarvitse [id]-kansiorakennetta.
-			const osoite = `/new?id=${valittuVideo.id}`;
+			const osoite = `new?id=${valittuVideo.id}`;
 
 			// eslint-disable-next-line svelte/no-navigation-without-resolve
 			await goto(osoite);

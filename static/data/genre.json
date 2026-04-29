@@ -1,10 +1,13 @@
 [{
-  "Genre": "Pop"
+  "Genre": "Pop",
+  "kuva": "/static/pop-otsikko.png" 
 },
 {
-  "Genre": "Rock"
+  "Genre": "Rock",
+  "kuva": "/static/rock-otsikko.png"
 },
 {
-  "Genre": "Rap"
+  "Genre": "Rap",
+  "kuva": "/static/rap-otsikko.png"
 }
 ]

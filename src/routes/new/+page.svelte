@@ -2,7 +2,8 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/state';
 	import Button from '$lib/components/Button.svelte';
-	import MixedGenres from '$lib/components/mixedGenres.svelte';
+	import MenuButton from '$lib/components/menuButton.svelte';
+	import { goto } from '$app/navigation';
 
 	//interface rakenne yhdelle biisille
 	interface Biisi {
@@ -59,7 +60,8 @@
 			</div>
 
 			<div class="grid grid-cols-2 gap-4">
-				<MixedGenres />
+				<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+				<MenuButton text="MENU" onclick={() => goto('/')} />
 				<Button text="RANDOMIZE" onclick={() => 'G'} />
 			</div>
 

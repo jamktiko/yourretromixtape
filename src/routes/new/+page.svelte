@@ -51,31 +51,20 @@
 			biisit = (await biisitRes.json()) as Biisi[];
 			genret = (await genretRes.json()) as GenreData[];
 		} catch (error) {
-			console.error('Datan haku epäonnistui:', error);
+			console.error('Error fetching data:', error);
 		}
 	});
-
-	// onMount(async () => {
-	// 	try {
-	// 		//haetaan biisit tiedostosta
-	// 		const biisitResponse = await fetch('/data/biisit.json');
-	// 		//muutetaan vastaus objektiksi ja tallennetaan
-	// 		biisit = (await biisitResponse.json()) as Biisi[];
-	// 	} catch (error) {
-	// 		console.error('Error fetching data:', error);
-	// 	}
-	// });
 </script>
 
 <main
 	class="flex min-h-screen flex-col items-center justify-center px-4 font-teksti text-base leading-4 font-bold text-text-color"
 >
-	<header class="h-100 w-100">
+	<header class="h-30 w-50">
 		{#if dynaaminenLogo}
 			<img src={dynaaminenLogo} alt="Genre logo" />
 		{/if}
 	</header>
-	<div class="inline-flex flex-col items-center justify-center gap-8">
+	<div class="inline-flex flex-col items-center justify-center gap-6">
 		{#if naytettavaBiisi}
 			<!-- tyylittelyä  -->
 			<div
@@ -98,7 +87,7 @@
 			</div>
 
 			<div
-				class="h-relative mb-10 w-90 rounded-xl border-[3px] border-text-color bg-text-box p-2 px-5 text-left shadow-[0px_4px_4px_2px_rgba(0,0,0,0.25)]"
+				class="h-relative mb-60 w-80 rounded-xl border-[3px] border-text-color bg-text-box p-2 px-5 text-left shadow-[0px_4px_4px_2px_rgba(0,0,0,0.25)] lg:w-90"
 			>
 				<h2 class="pb-2 text-center text-xl">Did you know?</h2>
 				<ul class="p-1 font-medium">

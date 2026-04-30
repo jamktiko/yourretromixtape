@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
 	interface KappaleGenre {
-		Genre: string;
+		genre: string;
 		kuva: string;
 	}
 
@@ -69,7 +69,7 @@
 		class="w-42 max-w-sm
 	origin-top"
 	>
-		{#each genret as g (g.Genre)}
+		{#each genret as g (g.genre)}
 			<!-- Käytetään valitse-funktiota, joka tallentaa listaan -->
 			<button
 				class="flex w-full cursor-pointer items-center justify-center rounded-lg
@@ -77,10 +77,10 @@
 				transition-all duration-300 ease-in-out
 		hover:scale-105
 		hover:bg-cta-color hover:shadow-lg"
-				onclick={() => valitse(g.Genre)}
+				onclick={() => valitse(g.genre)}
 			>
-				{g.Genre}
-				{#if valittuGenre === g.Genre}
+				{g.genre}
+				{#if valittuGenre === g.genre}
 					<div class="relative">
 						<span class="relative left-3 -translate-x-1/2 -translate-y-1/2 text-text-color">✓</span>
 					</div>

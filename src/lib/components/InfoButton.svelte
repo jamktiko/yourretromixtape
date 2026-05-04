@@ -105,18 +105,3 @@
 		</li>
 	</ul>
 </div>
-
-<!-- Tämä tulee page.svelteen eli etusivulle, josta käyttäjä voi 
-klikata info-nappia:
-<script lang="ts">
-//tämä siis skripti osioon
-	import InfoButtonTest from './components/InfoButton.svelte';
-	//muuttuja joka kertoo onko modaali auki vai ei:
-	let modalAuki = $state(false);
-</script>
-Info-nappi joka avaa modaalin:
-<button onclick={() => (modalAuki = true)}>Info</button>
-onclose välitetään infoButton komponentille, joka sulkee modaalin:
-{#if modalAuki}
-	<InfoButtonTest onClose={() => (modalAuki = false)} />
-{/if} -->

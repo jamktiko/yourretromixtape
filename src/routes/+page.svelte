@@ -84,8 +84,8 @@
 		<div class="flex flex-col items-center py-5">
 			<h1 class="pb-2 text-center text-xl">Welcome to YourRetroMixtape!</h1>
 			<p class="p-1 font-medium">
-				Choose a genre from the 'Choose genre' dropdown menu, or press the 'MixedGenres' button to
-				listen to one of the curated genres on random.
+				Choose a genre from the "Choose genre" dropdown menu, or press the "RandomGenre" button to
+				pick one of the curated genres on random.
 			</p>
 		</div>
 		<div class="flex flex-col items-center gap-4">

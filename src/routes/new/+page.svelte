@@ -14,9 +14,6 @@
 		fact: string[]; //taulukko faktoille
 	}
 
-	//taulukko biisit alkuun tyhjä ja se saa sisältöä haun jälkeen,
-	//eli muuttujan tila päivittyy onMountin jälkeen:
-	let biisit = $state<Biisi[]>([]);
 	// haetaan id osoiteriviltä, tilaa derived-muuttujana, koska se riippuu page-tilasta:
 	interface GenreData {
 		genre: string;

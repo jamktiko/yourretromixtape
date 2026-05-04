@@ -66,8 +66,7 @@
 {#if avaaValikko && !virhe}
 	<div
 		transition:fly={{ y: -8, duration: 180 }}
-		class="w-42 max-w-sm
-	origin-top"
+		class="absolute top-full right-0 z-50 mt-2 w-42 max-w-sm origin-top"
 	>
 		{#each genret as g (g.genre)}
 			<!-- Käytetään valitse-funktiota, joka tallentaa listaan -->

@@ -44,72 +44,74 @@
 			</button>
 		</div>
 
-	<h1 class="pb-2 text-center text-xl">Credits</h1>
-	<p class="p-1 font-medium">
-		All videos are embedded from YouTube via the official YouTube embed feature and remain the
-		property of their respective copyright holders. This project is a non-commercial educational
-		work created as part of a school assignment and is not intended for permanent public
-		distribution. Use of this content is intended to fall under fair use principles for educational
-		and non-commercial purposes.
-	</p>
-	<p class="py-2 text-center text-xl">Sources for facts:</p>
-	<ul class="p-1 font-medium">
-		<li class="hover:underline active:text-cta-color">
-			<a href="http://wikipedia.org">wikipedia.org</a>
-		</li>
-		<li class="hover:underline active:text-cta-color">
-			<a href="http://www.songmeaningsandfacts.com">songmeaningsandfacts.com</a>
-		</li>
-		<li class="hover:underline active:text-cta-color">
-			<a href="http://www.rollingstone.com">rollingstone.com</a>
-		</li>
-		<li class="hover:underline active:text-cta-color">
-			<a href="http://www.pdmusic.org">pdmusic.org</a>
-		</li>
-		<li class="hover:underline active:text-cta-color">
-			<a href="https://www.classical-music.com">classical-music.com</a>
-		</li>
-		<li class="hover:underline active:text-cta-color">
-			<a href="https://www.schoolofrock.com">schoolofrock.com</a>
-		</li>
-		<li class="hover:underline active:text-cta-color">
-			<a href="http://www.songfacts.com">songfacts.com</a>
-		</li>
-		<li class="hover:underline active:text-cta-color">
-			<a href="http://fanworld.co">fanworld.co</a>
-		</li>
-		<li class="hover:underline active:text-cta-color">
-			<a href="http://www.huffingtonpost.co.uk">huffingtonpost.co.uk</a>
-		</li>
-		<li class="hover:underline active:text-cta-color">
-			<a href="http://www.cheatsheet.com">cheatsheet.com</a>
-		</li>
-		<li class="hover:underline active:text-cta-color">
-			<a href="http://americansongwriter.com">americansongwriter.com</a>
-		</li>
-		<li class="hover:underline active:text-cta-color">
-			<a href="http://musicminds.com">musicminds.com</a>
-		</li>
-		<li class="hover:underline active:text-cta-color">
-			<a
-				href="https://americansongwriter.com/behind-the-history-and-meaning-of-tupac-shakurs-california-love/"
-				>americansongwriter.com - California Love</a
-			>
-		</li>
-		<li class="hover:underline active:text-cta-color">
-			<a
-				href="https://www.esquire.com/entertainment/music/a24511474/beastie-boys-sabotage-song-meaning/"
-				>esquire.com - Beastie Boys Sabotage</a
-			>
-		</li>
-		<li class="hover:underline active:text-cta-color">
-			<a href="https://en.wikipedia.org/wiki/Children%27s_Story">wikipedia.org - Children's Story</a
-			>
-		</li>
-		<li class="hover:underline active:text-cta-color">
-			<a href="https://en.wikipedia.org/wiki/Straight_Outta_Compton"
-				>wikipedia.org - Straight Outta Compton</a
-			>
-		</li>
-	</ul>
+		<h1 class="pb-2 text-center text-xl">Credits</h1>
+		<p class="p-1 font-medium">
+			All videos are embedded from YouTube via the official YouTube embed feature and remain the
+			property of their respective copyright holders. This project is a non-commercial educational
+			work created as part of a school assignment and is not intended for permanent public
+			distribution. Use of this content is intended to fall under fair use principles for
+			educational and non-commercial purposes.
+		</p>
+		<p class="py-2 text-center text-xl">Sources for facts:</p>
+		<ul class="p-1 font-medium">
+			<li class="hover:underline active:text-cta-color">
+				<a href="http://wikipedia.org">wikipedia.org</a>
+			</li>
+			<li class="hover:underline active:text-cta-color">
+				<a href="http://www.songmeaningsandfacts.com">songmeaningsandfacts.com</a>
+			</li>
+			<li class="hover:underline active:text-cta-color">
+				<a href="http://www.rollingstone.com">rollingstone.com</a>
+			</li>
+			<li class="hover:underline active:text-cta-color">
+				<a href="http://www.pdmusic.org">pdmusic.org</a>
+			</li>
+			<li class="hover:underline active:text-cta-color">
+				<a href="https://www.classical-music.com">classical-music.com</a>
+			</li>
+			<li class="hover:underline active:text-cta-color">
+				<a href="https://www.schoolofrock.com">schoolofrock.com</a>
+			</li>
+			<li class="hover:underline active:text-cta-color">
+				<a href="http://www.songfacts.com">songfacts.com</a>
+			</li>
+			<li class="hover:underline active:text-cta-color">
+				<a href="http://fanworld.co">fanworld.co</a>
+			</li>
+			<li class="hover:underline active:text-cta-color">
+				<a href="http://www.huffingtonpost.co.uk">huffingtonpost.co.uk</a>
+			</li>
+			<li class="hover:underline active:text-cta-color">
+				<a href="http://www.cheatsheet.com">cheatsheet.com</a>
+			</li>
+			<li class="hover:underline active:text-cta-color">
+				<a href="http://americansongwriter.com">americansongwriter.com</a>
+			</li>
+			<li class="hover:underline active:text-cta-color">
+				<a href="http://musicminds.com">musicminds.com</a>
+			</li>
+			<li class="hover:underline active:text-cta-color">
+				<a
+					href="https://americansongwriter.com/behind-the-history-and-meaning-of-tupac-shakurs-california-love/"
+					>americansongwriter.com - California Love</a
+				>
+			</li>
+			<li class="hover:underline active:text-cta-color">
+				<a
+					href="https://www.esquire.com/entertainment/music/a24511474/beastie-boys-sabotage-song-meaning/"
+					>esquire.com - Beastie Boys Sabotage</a
+				>
+			</li>
+			<li class="hover:underline active:text-cta-color">
+				<a href="https://en.wikipedia.org/wiki/Children%27s_Story"
+					>wikipedia.org - Children's Story</a
+				>
+			</li>
+			<li class="hover:underline active:text-cta-color">
+				<a href="https://en.wikipedia.org/wiki/Straight_Outta_Compton"
+					>wikipedia.org - Straight Outta Compton</a
+				>
+			</li>
+		</ul>
+	</div>
 </div>

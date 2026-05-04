@@ -17,7 +17,23 @@
 >
 	<!-- suljenappi ikkunalle: -->
 	<div class="flex justify-end">
-		<button class="cursor-pointer" onclick={onClose}>Close</button>
+		<button class="cursor-pointer" onclick={onClose} aria-label="Close">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="20"
+				height="20"
+				viewBox="0 0 20 20"
+				fill="none"
+			>
+				<path
+					d="M15 5L5 15M5 5L15 15"
+					stroke="#1E1E1E"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				/>
+			</svg>
+		</button>
 	</div>
 
 	<h1 class="pb-2 text-center text-xl">Credits</h1>

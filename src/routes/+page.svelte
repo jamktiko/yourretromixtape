@@ -42,12 +42,15 @@
 	let onkoValittu = $derived(valittuGenre !== '');
 </script>
 
+<!-- etusivun päätyylit, josta asettelu muodostuu -->
 <main
 	class="flex min-h-screen flex-col items-center justify-center px-4 font-teksti text-base leading-4 font-bold text-text-color"
 >
 	<header class="h-auto w-auto p-6">
 		<img class="h-50 w-auto" src="/logo_yourRetroMixtape.png" alt="Main Logo" />
 	</header>
+
+	<!-- containeri missä on kaikki etusivun sisältö paitsi header -->
 	<div
 		class="h-relative mb-60 flex w-80 flex-col justify-between rounded-xl border-[3px] border-text-color bg-text-box p-2 px-5 text-left shadow-[0px_4px_4px_2px_rgba(0,0,0,0.25)] lg:w-90"
 	>
@@ -55,6 +58,7 @@
 			<InfoButton onClose={() => (modalAuki = false)} />
 		{/if}
 		<div class="flex justify-between">
+			<!-- Info modaalin avaavan nappulan tyylit -->
 			<button
 				class="cursor-pointer transition-all duration-300 ease-in-out hover:scale-105"
 				onclick={() => (modalAuki = true)}
@@ -88,6 +92,8 @@
 				pick one of the curated genres on random.
 			</p>
 		</div>
+
+		<!-- Wrapperit etusivun RandomGenre ja Start napeille -->
 		<div class="flex flex-col items-center gap-4">
 			<div class="mb-3.5 grid grid-cols-2 gap-4">
 				<MixedGenres />

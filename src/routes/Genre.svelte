@@ -11,6 +11,10 @@
 		valittuGenre = nimi; // Korvaa vanhan valinnan uudella
 		avaaValikko = false; // Sulkee valikon
 	}
+
+	function suljeValikko() {
+		avaaValikko = false;
+	}
 </script>
 
 <!-- Valintanappi -->
@@ -32,6 +36,10 @@
 		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
 	</svg>
 </button>
+
+{#if avaaValikko}
+	<div role="presentation" class="fixed inset-0 z-10 bg-transparent" onclick={suljeValikko}></div>
+{/if}
 
 <!-- jos valikko on auki ja ei virhettä -->
 {#if avaaValikko}

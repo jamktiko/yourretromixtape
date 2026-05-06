@@ -57,7 +57,7 @@
 		{#if video.edellinenBiisi}
 			<div class="mt-4 text-left text-sm">
 				<p>Last watched: {video.edellinenBiisi.title}</p>
-				 // Näyttää viimeksi soitetun biisin artistin ja kappaleen nimen.
+				<!-- näyttää viimeksi soitetun biisin artistin ja kappaleen nimen -->
 			</div>
 		{/if}
 		<div class="flex flex-col items-center py-5">

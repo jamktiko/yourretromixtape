@@ -54,6 +54,12 @@
 				<Genre bind:valittuGenre />
 			</div>
 		</div>
+		{#if video.edellinenBiisi}
+			<div class="mt-4 text-left text-sm">
+				<p>Last watched: {video.edellinenBiisi.title}</p>
+				 // Näyttää viimeksi soitetun biisin artistin ja kappaleen nimen.
+			</div>
+		{/if}
 		<div class="flex flex-col items-center py-5">
 			<h1 class="pb-2 text-center text-xl">Welcome to YourRetroMixtape!</h1>
 			<p class="p-1 font-medium">

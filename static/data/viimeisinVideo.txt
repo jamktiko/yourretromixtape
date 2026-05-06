@@ -1,0 +1,18 @@
+Video.svelte.ts tiedostoon:
+Luokkaan tilat kohtaan seuraava koodin pätkä.
+edellinenBiisi = $state<Biisi | null>(null);
+
+Randombiisin jälkeen ja ennen gotota tulee seuraava koodi
+	this.edellinenBiisi = randomBiisi;
+
+
++page.svelte (routes):
+
+valittuGenren jälkeen tulisi seuraava koodi:
+	{#if video.edellinenBiisi}
+			<div class="mt-4 text-left text-sm">
+				<p>Last watched: {video.edellinenBiisi.title}</p>
+			</div>
+		{/if}
+
+Tämän koodin jälkeen on teksti "Welcome to YourRetroMixtape!"

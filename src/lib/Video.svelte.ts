@@ -91,6 +91,19 @@ class Video {
 			//Virhe ilmoitus tulee consoleen näkymään.
 		}
 	}
+
+	teema = $state('default');
+
+	vaihdaTeema() {
+		this.teema = this.teema === 'default' ? 'dark' : 'default';
+
+		// Päivitetään HTML-elementin attribuutti
+		if (typeof document !== 'undefined') {
+			document.documentElement.setAttribute('data-theme', this.teema);
+			// Tallennetaan valinta, jotta se säilyy sivun latauksen yli
+			localStorage.setItem('theme', this.teema);
+		}
+	}
 }
 //exportataan instanssi:
 export const video = new Video();

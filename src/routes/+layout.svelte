@@ -9,6 +9,9 @@
 	// jotta se on valmiina heti etusivulle päästyä:
 	onMount(() => {
 		video.lataadata();
+		const tallennettuTeema = localStorage.getItem('theme') || 'default';
+		video.teema = tallennettuTeema;
+		document.documentElement.setAttribute('data-theme', tallennettuTeema);
 	});
 </script>
 

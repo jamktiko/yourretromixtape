@@ -4,6 +4,7 @@
 	//vastaanottaa onclose funktion joka sulkee modaalin eli ikkunan
 	import { fade, scale } from 'svelte/transition';
 	let { onClose } = $props<{ onClose: () => void }>();
+	import ToggleSwitch from './toggleSwitch.svelte';
 </script>
 
 <!-- modaalin sisältölaatikko: -->
@@ -44,6 +45,6 @@
 			</button>
 		</div>
 
-		<button>vaihda teema</button>
+		<ToggleSwitch />
 	</div>
 </div>

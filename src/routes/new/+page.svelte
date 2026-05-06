@@ -18,6 +18,7 @@
 	});
 </script>
 
+<!-- Sivun pää asettelun antavat tyylit -->
 <main
 	class="flex min-h-screen flex-col items-center justify-center px-4 font-teksti text-base leading-4 font-bold text-text-color"
 >
@@ -26,9 +27,11 @@
 			<img src={dynaaminenLogo} alt="Genre logo" />
 		{/if}
 	</header>
+
+	<!-- containeri sivun sisällölle -->
 	<div class="inline-flex flex-col items-center justify-center gap-6">
 		{#if naytettavaBiisi}
-			<!-- tyylittelyä  -->
+			<!-- videosoittimen containeri -->
 			<div
 				class="h-56 w-80 place-content-end overflow-hidden rounded-xl border-[3px] border-text-color bg-cta-color shadow-[0px_4px_4px_2px_rgba(0,0,0,0.25)] lg:h-72 lg:w-100"
 			>
@@ -42,6 +45,7 @@
 				></iframe>
 			</div>
 
+			<!-- Wrapper Menu ja Randomize napeille -->
 			<div class="grid grid-cols-2 gap-4">
 				<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 				<MenuButton text="MENU" onclick={() => goto('/')} />
@@ -49,6 +53,7 @@
 				<Button text="RANDOMIZE" onclick={() => video.randomize(naytettavaBiisi)} />
 			</div>
 
+			<!-- teksti boxi container -->
 			<div
 				class="h-relative mb-60 w-80 rounded-xl border-[3px] border-text-color bg-text-box p-2 px-5 text-left shadow-[0px_4px_4px_2px_rgba(0,0,0,0.25)] lg:w-90"
 			>
@@ -60,7 +65,5 @@
 				</ul>
 			</div>
 		{/if}
-		<!-- tyylit -->
-		<!-- tyylit -->
 	</div>
 </main>

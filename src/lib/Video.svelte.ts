@@ -8,6 +8,9 @@ class Video {
 		biisit: [] as Biisi[],
 		genreData: [] as GenreData[]
 	});
+	edellinenBiisi = $state<Biisi | null>(null); // muuttuja, joka tallentaa viimeksi soitetun biisin
+	// tiedot aluksi null, koska ei ole vielä soitetun biisin tietoja.
+
 	//getterit palauttaa tilan muuttujat:
 	get biisit() {
 		return this.tila.biisit;
@@ -35,13 +38,16 @@ class Video {
 		);
 		//arvotaan random biisi uudesta taulukosta
 		const randomBiisi = Math.floor(Math.random() * genreBiisit.length);
+
 		const valittuRandomBiisi = genreBiisit[randomBiisi];
+		this.edellinenBiisi = valittuRandomBiisi; // tallennetaan viimeksi soitetun biisin tiedot,
+		// jotta voidaan näyttää "Last watched -teksti" etusivulla.
 		// eslint-disable-next-line svelte/no-navigation-without-resolve
 		goto(`/new?id=${valittuRandomBiisi.id}`);
 	}
 	//WILHON FUNKTIO:
 	//biisin arpominen valitusta genrestä,
-	//joka navigoi videolle, parametrina saadaab valittu genre:
+	//joka navigoi videolle, parametrina saadaan valittu genre:
 	async arvoVideo(valittuGenre: string) {
 		try {
 			const suodatetutBiisit = this.biisit.filter((biisi: Biisi) => biisi.genre === valittuGenre);
@@ -54,6 +60,8 @@ class Video {
 			const randomID = Math.floor(Math.random() * suodatetutBiisit.length);
 			// Ottaa koko biisin tiedot tuosta kohdasta
 			const valittuVideo = suodatetutBiisit[randomID];
+			this.edellinenBiisi = valittuVideo; // tallennetaan viimeksi soitetun biisin tiedot
+			// edellinenBiisi-muuttujaan, jotta voidaan näyttää "Last watched -teksti" etusivulla.
 			// (?id=), koska silloin ei tarvitse [id]-kansiorakennetta.
 			const osoite = `new?id=${valittuVideo.id}`;
 			// eslint-disable-next-line svelte/no-navigation-without-resolve
@@ -64,18 +72,23 @@ class Video {
 	}
 	//NEAN FUNKTIO:
 	//biisin arpominen täysin satunnaisesti, joka navigoi videolle:
-	//muutin funktion nimen:
 	async mixedGenre() {
 		try {
+			// Arvotaan satunnainen kokonaisluku väliltä 0 ja biisilistan pituus (ID:n arpominen)
 			const randomID = Math.floor(Math.random() * this.biisit.length);
 			// Ottaa koko biisin teidot tuosta kohdasta
 			const valittuVideo = this.biisit[randomID];
+			this.edellinenBiisi = valittuVideo; // tallennetaan viimeksi soitetun biisin tiedot
+			// edellinenBiisi-muuttujaan, jotta voidaan näyttää "Last watched -teksti" etusivulla.
+
+			// Luodaan uusi osoite (URL), johon liitetään valitun videon id-tunnus hakuparametriksi.
 			// (?id=), koska silloin ei tarvitse [id]-kansiorakennetta.
 			const osoite = `new?id=${valittuVideo.id}`;
 			// eslint-disable-next-line svelte/no-navigation-without-resolve
-			await goto(osoite);
+			await goto(osoite); // Siirrytään luotuun osoitteeseen ja odotetaan, että navigointi valmistuu.
 		} catch (virhe) {
-			console.error('Musiikkivideon haku epäonnistui:', virhe);
+			console.error('Music video search failed:', virhe);
+			//Virhe ilmoitus tulee consoleen näkymään.
 		}
 	}
 }

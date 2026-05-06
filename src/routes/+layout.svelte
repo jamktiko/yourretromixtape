@@ -1,8 +1,15 @@
 <script lang="ts">
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
+	import { video } from '$lib/Video.svelte';
+	import { onMount } from 'svelte';
 
 	let { children } = $props();
+	//haetaan data kerran sovelluksen käynnistyessä,
+	// jotta se on valmiina heti etusivulle päästyä:
+	onMount(() => {
+		video.lataadata();
+	});
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>

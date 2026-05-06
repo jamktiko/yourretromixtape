@@ -1,73 +1,20 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { page } from '$app/state';
 	import Button from '$lib/components/Button.svelte';
 	import MenuButton from '$lib/components/menuButton.svelte';
 	import { goto } from '$app/navigation';
-
-	//interface rakenne yhdelle biisille
-	interface Biisi {
-		id: string;
-		title: string;
-		url: string;
-		genre: string;
-		fact: string[]; //taulukko faktoille
-	}
-
-	// haetaan id osoiteriviltä, tilaa derived-muuttujana, koska se riippuu page-tilasta:
-	interface GenreData {
-		genre: string;
-		kuva: string;
-	}
-
-	//tilamäärittely:
-	//taulukko biisit alkuun tyhjä ja se saa sisältöä haun jälkeen
-	let biisit = $state<Biisi[]>([]);
-	let genret = $state<GenreData[]>([]);
+	import { video } from '$lib/Video.svelte';
 
 	// haetaan id osoiteriviltä
 	let valittuID = $derived(page.url.searchParams.get('id'));
 	// etsitään listasta se biisi, jonka id vastaa valittua id:tä ja
 	//tila päivittyy aina, kun valittuID muuttuu:
-	let naytettavaBiisi = $derived(biisit.find((b) => b.id === valittuID));
-	//randomize funktio joka hakee  saman genren biiseistä satunnaisen biisin:
-	function randomize() {
-		if (!naytettavaBiisi) return; //jos biisiä ei löydy, ei tehdä mitään.
-		//käytetään filteriä luomaan uusi taulukko jossa on saman genren
-		// biisit paitsi se jota soitetaan juuri nyt:
-		const genreBiisit = biisit.filter(
-			(b) => b.genre === naytettavaBiisi.genre && b.id !== naytettavaBiisi.id
-		);
-		//arvotaan random biisi uudesta taulukosta
-		const randomBiisi = Math.floor(Math.random() * genreBiisit.length);
-		const valittuRandomBiisi = genreBiisit[randomBiisi];
-		// eslint-disable-next-line svelte/no-navigation-without-resolve
-		goto(`/new?id=${valittuRandomBiisi.id}`);
-	}
-
+	let naytettavaBiisi = $derived(video.biisit.find((b) => b.id === valittuID));
 	let dynaaminenLogo = $derived.by(() => {
-		if (!naytettavaBiisi || genret.length === 0) return null;
+		if (!naytettavaBiisi || video.genret.length === 0) return null;
 
-		// Etsitään täydellinen osuma
-		const loytynytGenre = genret.find((g) => g.genre === naytettavaBiisi.genre);
-
+		const loytynytGenre = video.genret.find((g) => g.genre === naytettavaBiisi.genre);
 		return loytynytGenre ? loytynytGenre.kuva : null;
-	});
-
-	//onmount suoritetaan kerran kun komponentti ladataan selaimessa
-
-	onMount(async () => {
-		try {
-			const [biisitRes, genretRes] = await Promise.all([
-				fetch('/data/biisit.json'),
-				fetch('/data/genre.json')
-			]);
-
-			biisit = (await biisitRes.json()) as Biisi[];
-			genret = (await genretRes.json()) as GenreData[];
-		} catch (error) {
-			console.error('Error fetching data:', error);
-		}
 	});
 </script>
 
@@ -102,8 +49,8 @@
 			<div class="grid grid-cols-2 gap-4">
 				<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 				<MenuButton text="MENU" onclick={() => goto('/')} />
-
-				<Button text="RANDOMIZE" onclick={randomize} />
+				<!-- randomize nappi: -->
+				<Button text="RANDOMIZE" onclick={() => video.randomize(naytettavaBiisi)} />
 			</div>
 
 			<!-- teksti boxi container -->

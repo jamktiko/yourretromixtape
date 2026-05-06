@@ -1,77 +1,83 @@
-/* eslint-disable svelte/no-navigation-without-resolve */
+import type { Biisi, GenreData } from '$lib/tyypit';
 import { goto } from '$app/navigation';
-
-export interface Biisi {
-	id: string;
-	title: string;
-	url: string;
-	genre: string;
-	fact: string[]; //taulukko faktoille
-}
-
-export interface GenreData {
-	genre: string;
-	kuva: string;
-}
-
+//video-luokka sisältää metodit ja tilan.
+//komponentit käyttävät video luokkaa ja käyttää samaa dataa:
 class Video {
-	// Tilat (state)
-	biisit = $state<Biisi[]>([]); //taulukko biisit alkuun tyhjä ja se saa sisältöä haun jälkeen
-	genret = $state<GenreData[]>([]);
-	valittuGenre = $state('');
-	latausKaynnissa = $state(false);
-
-	constructor() {
-		// Ladataan data heti kun kyseinen olio luodaan
-		this.lataaKaikkiData();
+	//tila-objekti sisältää reaktiiviset muuttujat:
+	tila = $state({
+		biisit: [] as Biisi[],
+		genreData: [] as GenreData[]
+	});
+	//getterit palauttaa tilan muuttujat:
+	get biisit() {
+		return this.tila.biisit;
 	}
-
-	async lataaKaikkiData() {
-		if (this.biisit.length > 0) {
-			// Ei lataa uudestaan, jos data on jo ladattu
-			return (this.latausKaynnissa = true);
-		}
-
+	get genret() {
+		return this.tila.genreData;
+	}
+	//hakee kerralla datan ja tallentaa tilaan:
+	async lataadata() {
+		const [biisitRes, genreRes] = await Promise.all([
+			fetch('/data/biisit.json'),
+			fetch('/data/genre.json')
+		]);
+		this.tila.biisit = await biisitRes.json();
+		this.tila.genreData = await genreRes.json();
+	}
+	//biisin arpominen samasta genrestä joka valittiin,
+	//parametrina saadaan juuri nyt soitettava biisi:
+	randomize(naytettavaBiisi: Biisi) {
+		if (!naytettavaBiisi) return; //jos biisiä ei löydy, ei tehdä mitään.
+		//käytetään filteriä luomaan uusi taulukko jossa on saman genren
+		// biisit paitsi se jota soitetaan juuri nyt:
+		const genreBiisit = this.biisit.filter(
+			(b) => b.genre === naytettavaBiisi.genre && b.id !== naytettavaBiisi.id
+		);
+		//arvotaan random biisi uudesta taulukosta
+		const randomBiisi = Math.floor(Math.random() * genreBiisit.length);
+		const valittuRandomBiisi = genreBiisit[randomBiisi];
+		// eslint-disable-next-line svelte/no-navigation-without-resolve
+		goto(`/new?id=${valittuRandomBiisi.id}`);
+	}
+	//WILHON FUNKTIO:
+	//biisin arpominen valitusta genrestä,
+	//joka navigoi videolle, parametrina saadaab valittu genre:
+	async arvoVideo(valittuGenre: string) {
 		try {
-			// Käynnistetään molemmat haut samanaikaisesti Promise.all:lla, mikä nopeuttaa latausta
-			const [biisitRes, genretRes] = await Promise.all([
-				fetch('/data/biisit.json'),
-				fetch('/data/genre.json')
-			]);
+			const suodatetutBiisit = this.biisit.filter((biisi: Biisi) => biisi.genre === valittuGenre);
 
-			// Muunnetaan vastaukset JSON-muotoon ja tallennetaan muuttujiin.
-			this.biisit = (await biisitRes.json()) as Biisi[];
-			this.genret = (await genretRes.json()) as GenreData[];
-		} catch (error) {
-			console.error('Error fetching data:', error);
-		} finally {
-			// Finally-lohko suoritetaan aina riippumatta siitä, onnistuiko haku vai tuliko virhe.
-			// Tässä se kytkee latausanimaation tai "Ladataan..."-tilan pois päältä.
-			this.latausKaynnissa = false;
+			if (suodatetutBiisit.length === 0) {
+				console.error('Kyseisellä genrellä ei löytynyt biisejä:', valittuGenre);
+				return;
+			}
+			// Arpoo paikan listalta (0- listan pituus)
+			const randomID = Math.floor(Math.random() * suodatetutBiisit.length);
+			// Ottaa koko biisin tiedot tuosta kohdasta
+			const valittuVideo = suodatetutBiisit[randomID];
+			// (?id=), koska silloin ei tarvitse [id]-kansiorakennetta.
+			const osoite = `new?id=${valittuVideo.id}`;
+			// eslint-disable-next-line svelte/no-navigation-without-resolve
+			await goto(osoite);
+		} catch (virhe) {
+			console.error('Musiikkivideon haku epäonnistui:', virhe);
 		}
 	}
-
-	// Asynkroninen funktio, joka arpoo biisin ja siirtyy katselunäkymään.
-	// Parametri kohdegenre on valinnainen (?); jos sitä ei anneta, arvotaan kaikista biiseistä.
-	async arvoSatunnainenBiisi(kohdegenre?: string) {
-		// Luodaan lista arvontaa varten:
-		// Jos kohdegenre on annettu, suodatetaan (filter) vain kyseisen genren biisit.
-		// Jos kohdegenretä ei ole annettu, käytetään koko biisilistaa (this.biisit).
-		const lista = kohdegenre ? this.biisit.filter((b) => b.genre === kohdegenre) : this.biisit;
-
-		// Tarkistetaan, ettei lista ole tyhjä (varmistus, jotta koodi ei kaadu arvonnassa).
-		if (lista.length === 0) {
-			return; // Lopetetaan suoritus, jos sopivia biisejä ei löytynyt.
+	//NEAN FUNKTIO:
+	//biisin arpominen täysin satunnaisesti, joka navigoi videolle:
+	//muutin funktion nimen:
+	async mixedGenre() {
+		try {
+			const randomID = Math.floor(Math.random() * this.biisit.length);
+			// Ottaa koko biisin teidot tuosta kohdasta
+			const valittuVideo = this.biisit[randomID];
+			// (?id=), koska silloin ei tarvitse [id]-kansiorakennetta.
+			const osoite = `new?id=${valittuVideo.id}`;
+			// eslint-disable-next-line svelte/no-navigation-without-resolve
+			await goto(osoite);
+		} catch (virhe) {
+			console.error('Musiikkivideon haku epäonnistui:', virhe);
 		}
-
-		// Arvotaan satunnainen biisi listasta:
-		// Math.random() antaa luvun 0-1 väliltä, joka kerrotaan listan pituudella ja pyöristetään alaspäin.
-		const randomBiisi = lista[Math.floor(Math.random() * lista.length)];
-		// Siirrytään uuteen osoitteeseen käyttämällä Svelten goto-funktiota.
-		// (?id=), koska silloin ei tarvitse [id]-kansiorakennetta.
-		await goto(`/new?id=${randomBiisi.id}`);
 	}
 }
-
-// Exportataan yksi instanssi, jota koko sovellus käyttää
+//exportataan instanssi:
 export const video = new Video();

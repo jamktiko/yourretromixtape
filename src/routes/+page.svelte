@@ -4,10 +4,12 @@
 	import Button from '$lib/components/Button.svelte';
 	import InfoButton from '$lib/components/InfoButton.svelte';
 	import { video } from '$lib/Video.svelte';
+	import SettingsButton from '$lib/components/settingsButton.svelte';
 
 	let valittuGenre = $state('');
 	//infoikkuna, joka kertoo onko modal auki vai ei
 	let modalAuki = $state(false);
+	let asetAuki = $state(false);
 	let onkoValittu = $derived(valittuGenre !== '');
 </script>
 
@@ -50,6 +52,32 @@
 					<circle cx="12" cy="7" r="1.5" fill="black" />
 				</svg>
 			</button>
+			{#if asetAuki}
+				<SettingsButton onClose={() => (asetAuki = false)} />
+			{/if}
+			<button
+				class="cursor-pointer transition-all duration-300 ease-in-out hover:scale-105"
+				onclick={() => (asetAuki = true)}
+				aria-label="Settings"
+			>
+				<svg
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<!-- Circle -->
+					<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2" />
+
+					<!-- "i" stem -->
+					<line x1="12" y1="10" x2="12" y2="16" stroke="black" stroke-width="2" />
+
+					<!-- "i" dot -->
+					<circle cx="12" cy="7" r="1.5" fill="black" />
+				</svg>
+			</button>
+
 			<div class="relative inline-block self-start">
 				<Genre bind:valittuGenre />
 			</div>

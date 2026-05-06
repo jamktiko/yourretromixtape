@@ -28,7 +28,7 @@
 <style>
 	.app {
 		min-height: 100vh;
-		background-image: url('/retro-casette-bg.png');
+		background-image: var(--bg-image);
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;

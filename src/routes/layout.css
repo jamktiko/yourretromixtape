@@ -3,9 +3,25 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
-	--color-cta-color: #ff6635;
-	--color-text-box: #f5ea8e;
-	--color-text-color: #33261d;
+	--color-cta-color: var(--cta-color);
+	--color-text-box: var(--text-box);
+	--color-text-color: var(--text-color);
 
 	--font-teksti: 'Times New Roman', sans-serif;
+}
+
+/* default theme colors */
+:root {
+	--cta-color: #ff6635;
+	--text-box: #f5ea8e;
+	--text-color: #33261d;
+	--bg-image: url('/retro-casette-bg.png');
+}
+
+/* dark mode theme colors */
+[data-theme='dark'] {
+	--cta-color: #b43a11;
+	--text-box: #48362c;
+	--text-color: #f4e87c;
+	--bg-image: url('/retro-casette-bg-dark.png');
 }

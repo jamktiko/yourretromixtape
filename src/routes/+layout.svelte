@@ -30,7 +30,7 @@
 
 <style>
 	.app {
-		min-height: 100vh;
+		min-height: 100dvh;
 		background-image: var(--bg-image);
 		background-size: cover;
 		background-position: center;

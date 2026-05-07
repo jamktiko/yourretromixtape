@@ -35,15 +35,19 @@
 			<div
 				class="h-56 w-80 place-content-end overflow-hidden rounded-xl border-[3px] border-text-color bg-cta-color shadow-[0px_4px_4px_2px_rgba(0,0,0,0.25)] lg:h-72 lg:w-100"
 			>
-				<h1 class="p-1 text-center">{naytettavaBiisi.title}</h1>
+				<div class="p-1 text-center">
+					<h1>{naytettavaBiisi.title}</h1>
+				</div>
 
-				<iframe
-					class="lg h-50 w-full lg:h-67"
-					src={naytettavaBiisi.url}
-					title={naytettavaBiisi.title}
-					frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-				></iframe>
+				<div class="lg h-50 w-full lg:h-67">
+					<iframe
+						class="h-full w-full"
+						src={naytettavaBiisi.url}
+						title={naytettavaBiisi.title}
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					></iframe>
+				</div>
 			</div>
 
 			<!-- Wrapper Menu ja Randomize napeille -->

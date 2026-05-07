@@ -17,20 +17,26 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
-<div class="app">{@render children()}</div>
+<div class="app">
+	{@render children()}
 
-<footer
-	class="flex w-full flex-row items-center justify-center gap-2 border-t-2 bg-text-box py-4 text-center text-sm text-text-color"
->
-	<p>Siri Laine</p>
-	<p>Wilho Wilpola</p>
-	<p>Niko Mustajärvi</p>
-	<p>Nea Tiihonen</p>
-</footer>
+	<footer
+		class="flex w-full flex-row items-center justify-center gap-2 border-t-2 bg-text-box py-4 text-center text-sm text-text-color"
+	>
+		<p>Created by:</p>
+		<p>Siri Laine</p>
+		<p>-</p>
+		<p>Wilho Wilpola</p>
+		<p>-</p>
+		<p>Niko Mustajärvi</p>
+		<p>-</p>
+		<p>Nea Tiihonen</p>
+	</footer>
+</div>
 
 <style>
 	.app {
-		min-height: 100dvh;
+		min-height: 100vh;
 		background-image: var(--bg-image);
 		background-size: cover;
 		background-position: center;
@@ -42,5 +48,9 @@
 		.app {
 			background-attachment: scroll;
 		}
+	}
+	:global(html),
+	:global(body) {
+		min-height: 100%;
 	}
 </style>

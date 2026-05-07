@@ -11,6 +11,15 @@
 }
 
 @layer base {
+	/* teeman muutoksen animaatiot */
+	[data-theme] {
+		&,
+		& * {
+			transition-property: background-color, color, border-color;
+			transition-duration: 300ms;
+			transition-timing-function: ease;
+		}
+	}
 	html {
 		-webkit-text-size-adjust: none;
 		text-size-adjust: none;

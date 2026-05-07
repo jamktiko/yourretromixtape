@@ -25,7 +25,7 @@
 	>
 		<!-- suljenappi ikkunalle: -->
 		<div class="flex justify-end">
-			<button class="cursor-pointer" onclick={onClose} aria-label="Close">
+			<button class="cursor-pointer text-text-color" onclick={onClose} aria-label="Close">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="20"
@@ -35,7 +35,7 @@
 				>
 					<path
 						d="M15 5L5 15M5 5L15 15"
-						stroke="#1E1E1E"
+						stroke="currentColor"
 						stroke-width="2"
 						stroke-linecap="round"
 						stroke-linejoin="round"

@@ -49,8 +49,4 @@
 			background-attachment: scroll;
 		}
 	}
-	:global(html),
-	:global(body) {
-		min-height: 100%;
-	}
 </style>

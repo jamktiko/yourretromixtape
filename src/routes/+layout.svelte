@@ -28,7 +28,14 @@
 	<p>Nea Tiihonen</p>
 </footer>
 
-<div
-	class="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
-	style="background-image: var(--bg-image);"
-></div>
+<style>
+	.app {
+		min-height: 100dvh;
+		background-image: var(--bg-image);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		position: sticky;
+	}
+</style>

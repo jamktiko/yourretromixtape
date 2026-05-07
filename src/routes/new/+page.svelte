@@ -36,6 +36,7 @@
 				class="h-56 w-80 place-content-end overflow-hidden rounded-xl border-[3px] border-text-color bg-cta-color shadow-[0px_4px_4px_2px_rgba(0,0,0,0.25)] lg:h-72 lg:w-100"
 			>
 				<h1 class="p-1 text-center">{naytettavaBiisi.title}</h1>
+
 				<iframe
 					class="lg h-50 w-full lg:h-67"
 					src={naytettavaBiisi.url}

@@ -36,6 +36,11 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		background-attachment: fixed;
-		position: sticky;
+	}
+
+	@media (max-width: 768px) {
+		.app {
+			background-attachment: scroll;
+		}
 	}
 </style>

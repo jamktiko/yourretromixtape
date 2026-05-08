@@ -4,7 +4,7 @@ The app draws a random, curated music video based on the genre selected by the u
 
 ## Description
 
-In Your Retro Mixtape, users can choose from one of the available music genres to receive a randomly selected music video with accompanying fun facts or background information. Alternatively the user can also choose to forego the genre selection, instead receiving a random music video from all the available genres. After receiving a music video, the user can return back to the genre selcetion or keep receiving videos from the same category.
+In Your Retro Mixtape, users can choose from one of the available music genres to receive a randomly selected music video with accompanying fun facts or background information. Alternatively the user can also choose to forego the genre selection, instead receiving a random music video from all the available genres. After receiving a music video, the user can return back to the genre selcetion or keep receiving videos from the same category. The front page displays the title of the last played music video.
 
 ## Getting Started
 

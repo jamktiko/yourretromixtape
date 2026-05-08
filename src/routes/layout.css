@@ -6,6 +6,7 @@
 	--color-cta-color: var(--cta-color);
 	--color-text-box: var(--text-box);
 	--color-text-color: var(--text-color);
+	--color-active-color: var(--active-color);
 
 	--font-teksti: 'Times New Roman', sans-serif;
 }
@@ -31,6 +32,7 @@
 	--cta-color: #ff6635;
 	--text-box: #f5ea8e;
 	--text-color: #33261d;
+	--active-color: #b43a11;
 	--bg-image: url('/retro-casette-bg.png');
 }
 
@@ -39,5 +41,6 @@
 	--cta-color: #b43a11;
 	--text-box: #48362c;
 	--text-color: #f4e87c;
+	--active-color: #ff6635;
 	--bg-image: url('/retro-casette-bg-dark.png');
 }

@@ -83,7 +83,7 @@ class Video {
 		try {
 			// Arvotaan satunnainen kokonaisluku väliltä 0 ja biisilistan pituus (ID:n arpominen)
 			const randomID = Math.floor(Math.random() * this.biisit.length);
-			// Ottaa koko biisin teidot tuosta kohdasta
+			// Ottaa koko biisin tiedot tuosta kohdasta
 			const valittuVideo = this.biisit[randomID];
 			this.edellinenBiisi = valittuVideo; // tallennetaan viimeksi soitetun biisin tiedot
 			// edellinenBiisi-muuttujaan, jotta voidaan näyttää "Last watched -teksti" etusivulla.

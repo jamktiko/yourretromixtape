@@ -22,7 +22,7 @@
 	class="flex w-42 cursor-pointer items-center justify-center rounded-lg border-[3px] border-text-color bg-cta-color px-3 py-1 font-teksti text-base leading-4 font-bold text-text-color shadow-md
 		transition-all duration-300 ease-in-out
 	hover:scale-105
-	hover:bg-cta-color hover:shadow-lg"
+	hover:bg-cta-color hover:shadow-lg active:bg-active-color active:duration-0"
 	onclick={() => (avaaValikko = !avaaValikko)}
 >
 	<span class="text-center">{valittuGenre || 'Choose genre'}</span>

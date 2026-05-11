@@ -6,10 +6,10 @@
 	import { video } from '$lib/Video.svelte';
 
 	// haetaan id osoiteriviltä
-	let valittuID = $derived(page.url.searchParams.get('id'));
+	let valittuID = $derived(page.url.searchParams.get('id')); // NT
 	// etsitään listasta se biisi, jonka id vastaa valittua id:tä ja
 	//tila päivittyy aina, kun valittuID muuttuu:
-	let naytettavaBiisi = $derived(video.biisit.find((b) => b.id === valittuID));
+	let naytettavaBiisi = $derived(video.biisit.find((b) => b.id === valittuID)); // NT
 	let dynaaminenLogo = $derived.by(() => {
 		if (!naytettavaBiisi || video.genret.length === 0) return null;
 
@@ -31,19 +31,24 @@
 	<!-- containeri sivun sisällölle -->
 	<div class="inline-flex flex-col items-center justify-center gap-6">
 		{#if naytettavaBiisi}
+			//NT
 			<!-- videosoittimen containeri -->
 			<div
 				class="h-56 w-80 place-content-end overflow-hidden rounded-xl border-[3px] border-text-color bg-cta-color shadow-[0px_4px_4px_2px_rgba(0,0,0,0.25)] lg:h-72 lg:w-100"
 			>
-				<h1 class="p-1 text-center">{naytettavaBiisi.title}</h1>
+				<div class="p-1 text-center">
+					<h1>{naytettavaBiisi.title}</h1>
+				</div>
 
-				<iframe
-					class="lg h-50 w-full lg:h-67"
-					src={naytettavaBiisi.url}
-					title={naytettavaBiisi.title}
-					frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-				></iframe>
+				<div class="lg h-50 w-full lg:h-67">
+					<iframe
+						class="h-full w-full"
+						src={naytettavaBiisi.url}
+						title={naytettavaBiisi.title}
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					></iframe>
+				</div>
 			</div>
 
 			<!-- Wrapper Menu ja Randomize napeille -->
@@ -61,6 +66,7 @@
 				<h2 class="pb-2 text-center text-xl">Did you know?</h2>
 				<ul class="p-1 font-medium">
 					{#each naytettavaBiisi.fact as f (f)}
+						// NT
 						<li>{f}</li>
 					{/each}
 				</ul>

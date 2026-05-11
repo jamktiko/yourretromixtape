@@ -8,7 +8,7 @@ class Video {
 		biisit: [] as Biisi[],
 		genreData: [] as GenreData[]
 	});
-	edellinenBiisi = $state<Biisi | null>(null); // muuttuja, joka tallentaa viimeksi soitetun biisin
+	edellinenBiisi = $state<Biisi | null>(null); // NT: muuttuja, joka tallentaa viimeksi soitetun biisin
 	// tiedot aluksi null, koska ei ole vielä soitetun biisin tietoja.
 
 	//getterit palauttaa tilan muuttujat:
@@ -47,7 +47,7 @@ class Video {
 		const randomBiisi = Math.floor(Math.random() * genreBiisit.length);
 
 		const valittuRandomBiisi = genreBiisit[randomBiisi];
-		this.edellinenBiisi = valittuRandomBiisi; // tallennetaan viimeksi soitetun biisin tiedot,
+		/* NT */ this.edellinenBiisi = valittuRandomBiisi; // tallennetaan viimeksi soitetun biisin tiedot,
 		// jotta voidaan näyttää "Last watched -teksti" etusivulla.
 		// eslint-disable-next-line svelte/no-navigation-without-resolve
 		goto(`/new?id=${valittuRandomBiisi.id}`);
@@ -67,7 +67,7 @@ class Video {
 			const randomID = Math.floor(Math.random() * suodatetutBiisit.length);
 			// Ottaa koko biisin tiedot tuosta kohdasta
 			const valittuVideo = suodatetutBiisit[randomID];
-			this.edellinenBiisi = valittuVideo; // tallennetaan viimeksi soitetun biisin tiedot
+			/* NT */ this.edellinenBiisi = valittuVideo; // tallennetaan viimeksi soitetun biisin tiedot
 			// edellinenBiisi-muuttujaan, jotta voidaan näyttää "Last watched -teksti" etusivulla.
 			// (?id=), koska silloin ei tarvitse [id]-kansiorakennetta.
 			const osoite = `new?id=${valittuVideo.id}`;

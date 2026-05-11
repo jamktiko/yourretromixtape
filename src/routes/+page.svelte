@@ -80,6 +80,7 @@
 			</div>
 		</div>
 		{#if video.edellinenBiisi}
+			// NT
 			<div class="mt-4 text-left text-sm">
 				<p>Last watched: {video.edellinenBiisi.title}</p>
 				<!-- näyttää viimeksi soitetun biisin artistin ja kappaleen nimen -->
@@ -96,7 +97,7 @@
 		<!-- Wrapperit etusivun RandomGenre ja Start napeille -->
 		<div class="flex flex-col items-center gap-4">
 			<div class="mb-3.5 grid grid-cols-2 gap-4">
-				<MixedGenres />
+				<MixedGenres /> // NT
 				<Button
 					onclick={() => video.arvoVideo(valittuGenre)}
 					text="Start"

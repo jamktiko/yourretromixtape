@@ -25,11 +25,11 @@
 	<div
 		class="h-relative mb-60 flex w-80 flex-col justify-between rounded-xl border-[3px] border-text-color bg-text-box p-2 px-5 text-left shadow-[0px_4px_4px_2px_rgba(0,0,0,0.25)] lg:w-90"
 	>
-		{#if modalAuki}
-			<InfoButton onClose={() => (modalAuki = false)} />
+		{#if asetAuki}
+			<SettingsButton onClose={() => (asetAuki = false)} />
 		{/if}
 		<div class="flex justify-between">
-			<!-- Info modaalin avaavan nappulan tyylit -->
+			<!-- Modaalin avaavan nappulan tyylit -->
 			<button
 				class="cursor-pointer text-text-color transition-all duration-300 ease-in-out hover:scale-105"
 				onclick={() => (asetAuki = true)}
@@ -49,8 +49,8 @@
 				</svg>
 			</button>
 
-			{#if asetAuki}
-				<SettingsButton onClose={() => (asetAuki = false)} />
+			{#if modalAuki}
+				<InfoButton onClose={() => (modalAuki = false)} />
 			{/if}
 			<button
 				class="cursor-pointer text-text-color transition-all duration-300 ease-in-out hover:scale-105"

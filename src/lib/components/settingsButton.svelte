@@ -1,5 +1,3 @@
-<!--Lisenssit ja tekijänoikeudet-->
-
 <script lang="ts">
 	//vastaanottaa onclose funktion joka sulkee modaalin eli ikkunan
 	import { fade, scale } from 'svelte/transition';

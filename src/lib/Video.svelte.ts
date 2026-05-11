@@ -12,24 +12,31 @@ class Video {
 	// tiedot aluksi null, koska ei ole vielä soitetun biisin tietoja.
 
 	//getterit palauttaa tilan muuttujat:
-	get biisit() {
+	get biisit(): Biisi[] {
 		return this.tila.biisit;
 	}
-	get genret() {
+	get genret(): GenreData[] {
 		return this.tila.genreData;
 	}
 	//hakee kerralla datan ja tallentaa tilaan:
-	async lataadata() {
-		const [biisitRes, genreRes] = await Promise.all([
-			fetch('/data/biisit.json'),
-			fetch('/data/genre.json')
-		]);
-		this.tila.biisit = await biisitRes.json();
-		this.tila.genreData = await genreRes.json();
+	async lataadata(): Promise<void> {
+		try {
+			const [biisitRes, genreRes] = await Promise.all([
+				fetch('/data/biisit.json'),
+				fetch('/data/genre.json')
+			]);
+			if (!biisitRes.ok || !genreRes.ok) {
+				throw new Error('Failed to fetch data');
+			}
+			this.tila.biisit = await biisitRes.json();
+			this.tila.genreData = await genreRes.json();
+		} catch (error: unknown) {
+			console.error('Failed to load data:', error);
+		}
 	}
 	//biisin arpominen samasta genrestä joka valittiin,
 	//parametrina saadaan juuri nyt soitettava biisi:
-	randomize(naytettavaBiisi: Biisi) {
+	randomize(naytettavaBiisi: Biisi): void {
 		if (!naytettavaBiisi) return; //jos biisiä ei löydy, ei tehdä mitään.
 		//käytetään filteriä luomaan uusi taulukko jossa on saman genren
 		// biisit paitsi se jota soitetaan juuri nyt:

@@ -60,7 +60,7 @@ class Video {
 			const suodatetutBiisit = this.biisit.filter((biisi: Biisi) => biisi.genre === valittuGenre);
 
 			if (suodatetutBiisit.length === 0) {
-				console.error('Kyseisellä genrellä ei löytynyt biisejä:', valittuGenre);
+				console.error('No songs found for genre:', valittuGenre);
 				return;
 			}
 			// Arpoo paikan listalta (0- listan pituus)
@@ -74,7 +74,7 @@ class Video {
 			// eslint-disable-next-line svelte/no-navigation-without-resolve
 			await goto(osoite);
 		} catch (virhe) {
-			console.error('Musiikkivideon haku epäonnistui:', virhe);
+			console.error('Failed to load genres', virhe);
 		}
 	}
 	//NEAN FUNKTIO:
@@ -83,7 +83,7 @@ class Video {
 		try {
 			// Arvotaan satunnainen kokonaisluku väliltä 0 ja biisilistan pituus (ID:n arpominen)
 			const randomID = Math.floor(Math.random() * this.biisit.length);
-			// Ottaa koko biisin teidot tuosta kohdasta
+			// Ottaa koko biisin tiedot tuosta kohdasta
 			const valittuVideo = this.biisit[randomID];
 			this.edellinenBiisi = valittuVideo; // tallennetaan viimeksi soitetun biisin tiedot
 			// edellinenBiisi-muuttujaan, jotta voidaan näyttää "Last watched -teksti" etusivulla.
@@ -99,6 +99,7 @@ class Video {
 		}
 	}
 
+	// alustetaan teema tilamuuttujaksi, joka hakee tallennetun teeman localStoragesta tai asettaa oletukseksi 'default'
 	teema = $state('default');
 
 	vaihdaTeema() {

@@ -41,14 +41,15 @@
 	<div role="presentation" class="fixed inset-0 z-10 bg-transparent" onclick={suljeValikko}></div>
 {/if}
 
-<!-- jos valikko on auki ja ei virhettä -->
+<!-- jos valikko on auki-->
 {#if avaaValikko}
 	<div
 		transition:fly={{ y: -8, duration: 180 }}
 		class="absolute top-full right-0 z-50 mt-2 w-42 max-w-sm origin-top"
 	>
+		<!-- Each käy läpi genret json-tiedostosta ja näyttää ne -->
 		{#each video.genret as g (g.genre)}
-			<!-- Käytetään valitse-funktiota, joka tallentaa listaan -->
+			<!-- Käytetään valitse-funktiota, joka tallentaa valitun genren -->
 			<button
 				class="flex w-full cursor-pointer items-center justify-center rounded-lg
 				border-[3px] border-text-color bg-cta-color p-2 px-3 py-1 font-teksti text-base leading-4 font-bold text-text-color

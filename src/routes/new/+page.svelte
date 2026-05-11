@@ -31,7 +31,7 @@
 	<!-- containeri sivun sisällölle -->
 	<div class="inline-flex flex-col items-center justify-center gap-6">
 		{#if naytettavaBiisi}
-			//NT
+			<!--NT --->
 			<!-- videosoittimen containeri -->
 			<div
 				class="h-56 w-80 place-content-end overflow-hidden rounded-xl border-[3px] border-text-color bg-cta-color shadow-[0px_4px_4px_2px_rgba(0,0,0,0.25)] lg:h-72 lg:w-100"
@@ -66,7 +66,7 @@
 				<h2 class="pb-2 text-center text-xl">Did you know?</h2>
 				<ul class="p-1 font-medium">
 					{#each naytettavaBiisi.fact as f (f)}
-						// NT
+						<!--NT --->
 						<li>{f}</li>
 					{/each}
 				</ul>

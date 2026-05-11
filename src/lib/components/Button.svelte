@@ -1,12 +1,14 @@
 <!-- Yleinen button-komponentti. Näkyvinä ominausuuksina teksti ja mahdollinen disabled-tila -->
 <script lang="ts">
 	export interface Props {
+		// Funktio, joka suoritetaan nappia painettaessa. Se tekee vain sen, mitä sille on määritetty, eikä komponentti tiedä tarkalleen, mitä se tekee. Tämä tekee napista uudelleenkäytettävän eri tilanteissa.
 		onclick: () => void;
 		text: string;
 		disabled?: boolean;
-		// Napin ei-aktiivinen tila, joka estää käyttäjää klikkaamasta sitä. Oletuksena false, eli nappi on aktiivinen. Muista tyylitellä myös disabled-tila!
+		// Napin ei-aktiivinen tila, joka estää käyttäjää klikkaamasta sitä. Oletuksena false, eli nappi on aktiivinen.
 	}
 
+	// Destruktoidaan propsit, jotta ne saa suoraan käyttöön.
 	let { onclick, text, disabled = false }: Props = $props();
 </script>
 

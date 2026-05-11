@@ -25,11 +25,11 @@
 	<div
 		class="h-relative mb-60 flex w-80 flex-col justify-between rounded-xl border-[3px] border-text-color bg-text-box p-2 px-5 text-left shadow-[0px_4px_4px_2px_rgba(0,0,0,0.25)] lg:w-90"
 	>
-		{#if modalAuki}
-			<InfoButton onClose={() => (modalAuki = false)} />
+		{#if asetAuki}
+			<SettingsButton onClose={() => (asetAuki = false)} />
 		{/if}
 		<div class="flex justify-between">
-			<!-- Info modaalin avaavan nappulan tyylit -->
+			<!-- Modaalin avaavan nappulan tyylit -->
 			<button
 				class="cursor-pointer text-text-color transition-all duration-300 ease-in-out hover:scale-105"
 				onclick={() => (asetAuki = true)}
@@ -49,8 +49,8 @@
 				</svg>
 			</button>
 
-			{#if asetAuki}
-				<SettingsButton onClose={() => (asetAuki = false)} />
+			{#if modalAuki}
+				<InfoButton onClose={() => (modalAuki = false)} />
 			{/if}
 			<button
 				class="cursor-pointer text-text-color transition-all duration-300 ease-in-out hover:scale-105"
@@ -80,7 +80,7 @@
 			</div>
 		</div>
 		{#if video.edellinenBiisi}
-			// NT
+			<!--NT --->
 			<div class="mt-4 text-left text-sm">
 				<p>Last watched: {video.edellinenBiisi.title}</p>
 				<!-- näyttää viimeksi soitetun biisin artistin ja kappaleen nimen -->
@@ -97,7 +97,8 @@
 		<!-- Wrapperit etusivun RandomGenre ja Start napeille -->
 		<div class="flex flex-col items-center gap-4">
 			<div class="mb-3.5 grid grid-cols-2 gap-4">
-				<MixedGenres /> // NT
+				<MixedGenres />
+				<!--NT --->
 				<Button
 					onclick={() => video.arvoVideo(valittuGenre)}
 					text="Start"

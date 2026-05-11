@@ -109,6 +109,41 @@
     "url": "https://www.youtube.com/embed/TMZi25Pq3T8?si=Z6fGF_zz9-nR1Q95",
     "genre": "Rap",
     "fact": ["Released in January 1989, Straight Outta Compton became the first gangsta rap album to go platinum despite minimal radio play. Its notoriety was fueled by a warning letter from the FBI regarding the song Fuck tha Police, a move that backfired by cementing N.W.A's reputation as the world’s most dangerous group."]
+  },
+  {
+    "id": "13",
+    "title": "Metallica - One",
+    "url": "https://www.youtube.com/embed/WM8bTdBs-cw?si=eVokht_YgrXG8i04",
+    "genre": "Rock",
+    "fact": ["The music video features scenes from the film Johnny Got His Gun, a concept James Hetfield chose to reflect the song's lyrics. It depicts a soldier who uses Morse code to tap out a haunting plea for death: 'Please kill me'."]
+  },
+  {
+    "id": "14",
+    "title": "Guns N' Roses - You Could Be Mine",
+    "url": "https://www.youtube.com/embed/MXx9S2nDouY?si=t2bT4KOQXTmvt2mu",
+    "genre": "Rock",
+    "fact": ["Directed as a tie-in for Terminator 2, the video features Arnold Schwarzenegger’s T-800 arriving at a concert to assassinate the band. After scanning the members, the Terminator concludes that killing them would be a 'waste of ammo' and simply walks away."]
+  },
+  {
+    "id": "15",
+    "title": "a-ha - Take on Me",
+    "url": "https://www.youtube.com/embed/djV11Xbc914?si=h26_L2kQidEHYbh5",
+    "genre": "Pop",
+    "fact": ["Singer Morten Harket's vocal performance covers over two and a half octaves, reaching one of the most difficult-to-sing falsetto notes in pop history."]
+  },
+  {
+    "id": "16",
+    "title": "Coolio - Gangsta's Paradise (feat. L.V)",
+    "url": "https://www.youtube.com/embed/fPO76Jlnz6c?si=XOfYI528NOlNo0vy",
+    "genre": "Rap",
+    "fact": ["The song is based on Stevie Wonder's 1976 track 'Pastime Paradise'. Stevie Wonder originally refused to clear the sample until Coolio agreed to remove all profanity from the lyrics."]
+  },
+  {
+    "id": "17",
+    "title": "Mamas and the Papas - California Dreamin'",
+    "url": "https://www.youtube.com/embed/KOok1WzZbOY?si=_uivfRMDdF78w7bJ",
+    "genre": "Rock",
+    "fact": ["The second verse about entering a church was based on Michelle's real-life visit to St. Patrick’s Cathedral. She wasn't there to pray, but simply to escape the biting New York cold for a few minutes"]
   }
 ]
 

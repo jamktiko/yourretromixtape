@@ -31,7 +31,7 @@ Nea Tiihonen
 
 ### Kuvaus
 
-Your Retro Mixtape on musiikkisovellus, joka generoi satunnainen musiikkvideon käyttäjälle. Käyttäjä valitsee kolmesta genrestä yhden; pop, rock ja rap, josta ohjelma
+Your Retro Mixtape on musiikkisovellus, joka generoi satunnaisen musiikkivideon käyttäjälle. Käyttäjä valitsee kolmesta genrestä yhden; pop, rock ja rap, josta ohjelma
 valitsee satunnaisen videon genrestä. Videon mukana tulee pieni tietoisku kappaleesta. Videot tulevat youtubesta upotettuna sivulle. Videoita jokaisessa genressä on minimissään 4. Sovelluksen ideana on katsoa musiikkivideoita ja saada samalla pikku faktoja. Randomize ominaisuudella tuodaan pientä yllätyksellisyyttä. Sovellus on musiikin ystäville ja niille jota nauttivat musiikkivideoiden katsomisesta.
 
 ### Projektiryhmä
@@ -57,7 +57,7 @@ miellyttävä käyttää. Tavoite on myös saada sovellus tehtyä sovitussa aika
 | Rautalankamalli     | 21.4.2026  | Tyylien valintaa ja ulkoasun suunnittelua |
 | Teknisen rakenteen  | 22.4.2026  | Komponenttien, tiedostojen ja rakenteen   |
 | suunnittelua        |            | suunnittelua.                             |
-| Projektin testirepo | 22.5.2026  |                                           |
+| Projektin testirepo | 22.4.2026  |                                           |
 | luotu               |            |                                           |
 | Dokumentointia ja   | 22.04.2026 | Tiedostojen täyttelyä ja projektisuunni-  |
 | roolien jakoa       |            | telman tekoa.                             |
@@ -73,7 +73,7 @@ miellyttävä käyttää. Tavoite on myös saada sovellus tehtyä sovitussa aika
 
 ### Raportointi
 
-Käytämämme trelloa työvaiheiden seuraamisessa ja tehtävien jaossa. Meillä on omat kortit, jossa on työtehtävät ja kaikille yhteiset tehty, kesken sekä aloitettavat tehtävät kortit. Kommentoimme koodeihin myös, jotta tiimikaveri ymmärtää paremmin mitä mikäkin toiminnallisuus tekee. Täytämme viikkoraporttiin tehdyt asiat ja seuraavalla viikolla aloitettavat, sekä mahdollisia asioita jotka pitkää selvittää.
+Käytämämme trelloa työvaiheiden seuraamisessa ja tehtävien jaossa. Meillä on omat kortit, jossa on työtehtävät ja kaikille yhteiset tehty, kesken sekä aloitettavat tehtävät kortit. Kommentoimme koodeihin myös, jotta tiimikaveri ymmärtää paremmin mitä mikäkin toiminnallisuus tekee. Täytämme viikkoraporttiin tehdyt asiat ja seuraavalla viikolla aloitettavat, sekä mahdollisia asioita jotka pitää selvittää.
 
 ### Tuntikirjaukset
 

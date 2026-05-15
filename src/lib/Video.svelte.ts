@@ -18,7 +18,7 @@ class Video {
 	get genret(): GenreData[] {
 		return this.tila.genreData;
 	}
-	//hakee kerralla datan ja tallentaa tilaan:
+	//hakee kerralla datan kun etusivu avataanja tallentaa tilaan:
 	async lataadata(): Promise<void> {
 		try {
 			const [biisitRes, genreRes] = await Promise.all([
@@ -36,13 +36,17 @@ class Video {
 	}
 	//biisin arpominen samasta genrestä joka valittiin,
 	//parametrina saadaan juuri nyt soitettava biisi:
-	randomize(naytettavaBiisi: Biisi): void {
+	async randomize(naytettavaBiisi: Biisi): Promise<void> {
 		if (!naytettavaBiisi) return; //jos biisiä ei löydy, ei tehdä mitään.
 		//käytetään filteriä luomaan uusi taulukko jossa on saman genren
 		// biisit paitsi se jota soitetaan juuri nyt:
 		const genreBiisit = this.biisit.filter(
 			(b) => b.genre === naytettavaBiisi.genre && b.id !== naytettavaBiisi.id
 		);
+		if (genreBiisit.length === 0) {
+			console.log('No other songs found in the same genre.');
+			return;
+		}
 		//arvotaan random biisi uudesta taulukosta
 		const randomBiisi = Math.floor(Math.random() * genreBiisit.length);
 
@@ -50,7 +54,7 @@ class Video {
 		/* NT */ this.edellinenBiisi = valittuRandomBiisi; // tallennetaan viimeksi soitetun biisin tiedot,
 		// jotta voidaan näyttää "Last watched -teksti" etusivulla.
 		// eslint-disable-next-line svelte/no-navigation-without-resolve
-		goto(`/new?id=${valittuRandomBiisi.id}`);
+		await goto(`/new?id=${valittuRandomBiisi.id}`);
 	}
 	//WILHON FUNKTIO:
 	//biisin arpominen valitusta genrestä,

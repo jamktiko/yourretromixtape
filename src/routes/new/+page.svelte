@@ -6,10 +6,10 @@
 	import { video } from '$lib/Video.svelte';
 
 	// haetaan id osoiteriviltä
-	let valittuID = $derived(page.url.searchParams.get('id')); // NT
+	let valittuID = $derived(page.url.searchParams.get('id'));
 	// etsitään listasta se biisi, jonka id vastaa valittua id:tä ja
-	//tila päivittyy aina, kun valittuID muuttuu:
-	let naytettavaBiisi = $derived(video.biisit.find((b) => b.id === valittuID)); // NT
+	//tila eli biisi päivittyy aina, kun valittuID muuttuu:
+	let naytettavaBiisi = $derived(video.biisit.find((b) => b.id === valittuID));
 	let dynaaminenLogo = $derived.by(() => {
 		if (!naytettavaBiisi || video.genret.length === 0) return null;
 
